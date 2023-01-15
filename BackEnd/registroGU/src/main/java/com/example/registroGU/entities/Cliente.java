@@ -1,6 +1,7 @@
 package com.example.registroGU.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -33,20 +34,22 @@ public class Cliente {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_pais", referencedColumnName = "id")
-
+    @JsonBackReference
     private Pais pais;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_marca", referencedColumnName = "id")
+    @JsonBackReference
     private Marca marca;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_departamento", referencedColumnName = "id")
-
+    @JsonBackReference
     private Departamento departamento;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "id_ciudad", referencedColumnName = "id")
+    @JsonBackReference
     private Ciudad ciudad;
 
 
