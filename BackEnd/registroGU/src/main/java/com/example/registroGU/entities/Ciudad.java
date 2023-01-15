@@ -1,7 +1,6 @@
 package com.example.registroGU.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -20,7 +19,29 @@ public class Ciudad {
     private String nombre_ciudad;
 
     @OneToMany(mappedBy = "ciudad")
-    @JsonManagedReference
     private List<Cliente> clientes = new ArrayList<Cliente>();
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNombre_ciudad() {
+        return nombre_ciudad;
+    }
+
+    public void setNombre_ciudad(String nombre_ciudad) {
+        this.nombre_ciudad = nombre_ciudad;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
 }

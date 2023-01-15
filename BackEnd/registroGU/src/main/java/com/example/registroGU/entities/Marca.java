@@ -1,6 +1,6 @@
 package com.example.registroGU.entities;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -18,10 +18,29 @@ public class Marca {
     private String nombre_marca;
 
     @OneToMany(mappedBy = "marca")
-    @JsonManagedReference
     private List<Cliente> clientes = new ArrayList<Cliente>();
 
+    public Integer getId() {
+        return id;
+    }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
+    public String getNombre_marca() {
+        return nombre_marca;
+    }
 
+    public void setNombre_marca(String nombre_marca) {
+        this.nombre_marca = nombre_marca;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
 }
