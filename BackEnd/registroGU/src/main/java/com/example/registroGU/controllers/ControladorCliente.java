@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/clienteuribe")
+@CrossOrigin
 public class ControladorCliente {
 
     @Autowired // llamado a las clases en los paquetes

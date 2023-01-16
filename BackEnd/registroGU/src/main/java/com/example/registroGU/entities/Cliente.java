@@ -9,6 +9,9 @@ import jakarta.persistence.*;
 
 public class Cliente {
 
+    public Cliente() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -32,26 +35,17 @@ public class Cliente {
     @Column(name = "fecha_nacimiento")
     private String fecha_nacimiento;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_pais", referencedColumnName = "id")
-    @JsonBackReference
-    private Pais pais;
+    @Column(name = "ciudad")
+    private String ciudad;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_marca", referencedColumnName = "id")
-    @JsonBackReference
-    private Marca marca;
+    @Column(name = "departamento")
+    private String departamento;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_departamento", referencedColumnName = "id")
-    @JsonBackReference
-    private Departamento departamento;
+    @Column(name = "pais")
+    private String pais;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "id_ciudad", referencedColumnName = "id")
-    @JsonBackReference
-    private Ciudad ciudad;
-
+    @Column(name = "marca")
+    private String marca;
 
     public Integer getId() {
         return id;
@@ -93,6 +87,14 @@ public class Cliente {
         this.apellido = apellido;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public String getFecha_nacimiento() {
         return fecha_nacimiento;
     }
@@ -101,29 +103,35 @@ public class Cliente {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public Pais getPais() {
-        return pais;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
-    public Marca getMarca() {
-        return marca;
-    }
-
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
-
-    public Departamento getDepartamento() {
+    public String getDepartamento() {
         return departamento;
     }
 
-    public void setDepartamento(Departamento departamento) {
+    public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
 
+    public String getPais() {
+        return pais;
+    }
 
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 }
