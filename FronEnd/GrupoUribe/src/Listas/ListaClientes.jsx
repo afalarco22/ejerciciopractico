@@ -13,11 +13,11 @@ function ListaClientes() {
         setCliente(res.data);
       };
 
-      /*
+      
 
       useEffect(() => {
         getClientes();
-      }, []);*/
+      }, []);
     
     
   return (

@@ -19,24 +19,36 @@ function FormularioCliente() {
     //const nombre, apellido, tipo_documento, documento, direccion, fecha_nacimiento, pais, departamento, ciudad, marca
 
     const createCliente = async (e) => {
-        const res = await axios.post(urlListarCliente, {
-          "nombre": nombre,
-          "apellido": apellido,
-          "tipo_documento": tipo_documento,
-          "documento": documento,
-          "direccion": direccion,
-          "fecha_nacimiento": fecha_nacimiento,
-          "pais": pais,
-          "departamento": departamento,
-          "ciudad": ciudad,
-          "marca": marca
+          axios.post(urlListarCliente, {
+          nombre: nombre,
+          apellido: apellido,
+          tipo_documento: tipo_documento,
+          documento: documento,
+          direccion: direccion,
+          fecha_nacimiento: fecha_nacimiento,
+          pais: pais,
+          departamento: departamento,
+          ciudad: ciudad,
+          marca: marca
         }
-        );
+        ).then(function(){
+          alert("Se ha creado correctamente el registro")
+          setNombre("")
+          setApellido("")
+          setCiudad("")
+          setDepartamento("")
+          setPais("")
+          setDocumento("")
+          setTipo_documento("")
+          setDireccion("")
+          setMarca("")
+          setFecha_nacimiento("")
+        })
     
       }
 
   return (
-    <form onSubmit={createCliente(e)} >
+    <>
       <div className="form-group">
         <label>Nombres del cliente</label>
         <input
@@ -64,7 +76,7 @@ function FormularioCliente() {
       
       <div className="form-group">
         <label for="exampleFormControlSelect2">Tipo de documento</label>
-        <select className="form-control" id="" name="tipo_documento" onChange={(e)=>{setTipo_documento(e.target.value)}}>
+        <select className="form-control" id="" name="tipo_documento" onChange={(e)=>setTipo_documento(e.target.value)}>
             <option value="C.C.">C.C.</option>
             <option value="T.I.">T.I.</option>
             <option value="T.E.">T.E.</option>
@@ -83,7 +95,7 @@ function FormularioCliente() {
           aria-describedby="emailHelp"
           placeholder=">Número documento"
           name="documento"
-          onChange={(e)=>{setDocumento(e.target.value)}}
+          onChange={(e)=>setDocumento(e.target.value)}
         />
       </div>
 
@@ -96,7 +108,7 @@ function FormularioCliente() {
           aria-describedby="emailHelp"
           placeholder="Dirección"
           name="direccion"
-          onChange={(e)=>{setDireccion(e.target.value)}}
+          onChange={(e)=>setDireccion(e.target.value)}
         />
       </div>
 
@@ -109,13 +121,14 @@ function FormularioCliente() {
           aria-describedby="emailHelp"
           placeholder="Fecha de nacimiento"
           name="fecha_nacimiento"
-          onChange={(e)=>{setFecha_nacimiento(e.target.value)}}
+          onChange={(e)=>setFecha_nacimiento(e.target.value)}
         />
       </div>
 
       <div className="form-group">
         <label for="exampleFormControlSelect2">País</label>
-        <select className="form-control" id="" name="pais" onChange={(e)=>{setPais(e.target.value)}}>
+        <select className="form-control"  onChange={(e)=>setPais(e.target.value)}>
+            <option value="">-----</option>
             <option value="Colombia">Colombia</option>
             <option value="Ecuador">Ecuador</option>  
         </select> 
@@ -123,23 +136,26 @@ function FormularioCliente() {
 
       <div className="form-group">
         <label for="exampleFormControlSelect2">Departamento</label>
-        <select className="form-control" id="" name="departamento" onChange={(e)=>{setDepartamento(e.target.value)}}>
-            <option value="Colombia">Antioquia</option>
-            <option value="Ecuador">Pichincha</option>  
+        <select className="form-control"  onChange={(e)=>setDepartamento(e.target.value)}>
+            <option value="">-----</option>
+            <option value="Antioquia">Antioquia</option>
+            <option value="Pichincha">Pichincha</option>  
         </select> 
       </div>
 
       <div className="form-group">
         <label for="exampleFormControlSelect2">Ciudad</label>
-        <select className="form-control" id="" name="ciudad" onChange={(e)=>{setCiudad(e.target.value)}}>
-            <option value="Colombia">Medellín</option>
-            <option value="Ecuador">Quito</option>  
+        <select className="form-control"  onChange={(e)=>setCiudad(e.target.value)}>
+            <option value="">-----</option>
+            <option value="Medellin">Medellín</option>
+            <option value="Quito">Quito</option>  
         </select> 
       </div>
 
       <div className="form-group">
         <label for="exampleFormControlSelect2">Marca</label>
-        <select className="form-control" id="" name="marca" onChange={(e)=>{setMarca(e.target.value)}}>
+        <select className="form-control"  onChange={(e)=>setMarca(e.target.value)}>
+            <option value="">-----</option>
             <option value="Americanino">Americanino</option>
             <option value="American Eagle">American Eagle</option>
             <option value="Chevignon">Chevignon</option>  
@@ -149,10 +165,12 @@ function FormularioCliente() {
         </select> 
       </div>
 
-      <button type="submit" class="btn btn-primary" >
+      <button type="submit" class="btn btn-primary" onClick={createCliente} >
         Submit
       </button>
-    </form>
+
+    </>
+    
   );
 }
 
