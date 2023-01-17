@@ -161,7 +161,8 @@ function FormularioCliente() {
           id=""
           name="tipo_documento"
           onChange={(e) => setTipo_documento(e.target.value)}
-        >
+        > 
+          <option value="">--------</option>
           <option value="C.C.">C.C.</option>
           <option value="T.I.">T.I.</option>
           <option value="T.E.">T.E.</option>
@@ -216,11 +217,15 @@ function FormularioCliente() {
         <label >País</label>
         <select
           className="form-control"
+          value={pais}
           onChange={(e) => setPais(e.target.value)}
         >
           <option value="">-----</option>
-          <option value="Colombia">Colombia</option>
-          <option value="Ecuador">Ecuador</option>
+          {datosPais.map((e) => (
+            <option key={e.id} value={e.pais}>
+              {e.pais}
+            </option>
+          ))}
         </select>
       </div>
 
