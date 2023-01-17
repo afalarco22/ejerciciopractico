@@ -32,7 +32,7 @@ public class ControladorCliente {
     }
 
     @GetMapping
-    public ResponseEntity<?>buscarEmpleados(){
+    public ResponseEntity<?>buscarCliente(){
 
         try{
             return  ResponseEntity

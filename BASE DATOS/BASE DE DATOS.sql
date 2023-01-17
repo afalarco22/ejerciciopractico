@@ -1,45 +1,64 @@
 CREATE DATABASE registrouribe;
 use registrouribe;
 
+--
+
 /*La creación de las tablas y las relaciones se hicieron con el modelo de java */
 
--- insertamos algunos paises 
-insert into paises (pais) values ('Colombia');
-insert into paises (pais) values ('Ecuador');
-insert into paises (pais) values ('Peru');
-insert into paises (pais) values ('Brasil');
-insert into paises (pais) values ('Argentina');
+/*marcas*/
 
--- insertamos algunos departamentos
-insert into departamentos (departamento) values ('Antioquia');
-insert into departamentos (departamento) values ('Pichincha');
-insert into departamentos (departamento) values ('Departamento de Lima');
-insert into departamentos (departamento) values ('Rio de Janeiro');
-insert into departamentos (departamento) values ('La Plata');
+INSERT INTO marcas(marca) VALUES("AMERICANINO");
+INSERT INTO marcas(marca) VALUES("AMERICAN EAGLE");
+INSERT INTO marcas(marca) VALUES("CHEVIGNON");
+INSERT INTO marcas(marca) VALUES("ESPRIT");
+INSERT INTO marcas(marca) VALUES("NAF NAF");
+INSERT INTO marcas(marca) VALUES("RIFLE");
 
--- insertamos algunas ciudades
-insert into ciudades (nombre_ciudad) values ('Medellín');
-insert into ciudades (nombre_ciudad) values ('Quito');
-insert into ciudades (nombre_ciudad) values ('Lima');
-insert into ciudades (nombre_ciudad) values ('Rio de Janeiro');
-insert into ciudades (nombre_ciudad) values ('Buenos Aires');
+-- pais
+INSERT INTO paises(pais) VALUES("Argentina");
+INSERT INTO paises(pais) VALUES("Colombia");
+INSERT INTO paises(pais) VALUES("Perú");
+INSERT INTO paises(pais) VALUES("Ecuador");
+INSERT INTO paises(pais) VALUES("Panamá");
+INSERT INTO paises(pais) VALUES("Chile");
+INSERT INTO paises(pais) VALUES("Brasil");
+INSERT INTO paises(pais) VALUES("Uruguay");
 
--- insertamos  marcas
+-- departamentos
+INSERT INTO departamentos(departamento) VALUES("La plata");
+INSERT INTO departamentos(departamento) VALUES("Antioquia");
+INSERT INTO departamentos(departamento) VALUES("Cundinamarca");
+INSERT INTO departamentos(departamento) VALUES("Provincia de lima");
+INSERT INTO departamentos(departamento) VALUES("Pichincha");
+INSERT INTO departamentos(departamento) VALUES("Distrito de Panamá");
+INSERT INTO departamentos(departamento) VALUES("Región Metropolitana de Santiago");
+INSERT INTO departamentos(departamento) VALUES("Estado de Rio de Janeiro");
+INSERT INTO departamentos(departamento) VALUES("Departamento de Motevideo");
 
-insert into marcas (nombre_marca) values ('Americanino');
-insert into marcas (nombre_marca) values ('American Eagle');
-insert into marcas (nombre_marca) values ('Chevignon');
-insert into marcas (nombre_marca) values ('Sprit');
-insert into marcas (nombre_marca) values ('Naf Naf');
-insert into marcas (nombre_marca) values ('Rifle');
+-- ciudades
+
+INSERT INTO ciudades(ciudad) VALUES("Buenos Aires");
+INSERT INTO ciudades(ciudad) VALUES("Medellín");
+INSERT INTO ciudades(ciudad) VALUES("Bogotá");
+INSERT INTO ciudades(ciudad) VALUES("Lima");
+INSERT INTO ciudades(ciudad) VALUES("Quito");
+INSERT INTO ciudades(ciudad) VALUES("Ciudad de Panamá");
+INSERT INTO ciudades(ciudad) VALUES("Santiago de Chile");
+INSERT INTO ciudades(ciudad) VALUES("Rio de Janeiro");
+INSERT INTO ciudades(ciudad) VALUES("Motevideo");
+
+
+
 
 
 -- consultas
-SELECT * FROM MARCAS;
-SELECT * FROM PAISES;
-SELECT * FROM DEPARTAMENTOS;
-SELECT * FROM CIUDADES;
+
 SELECT * FROM CLIENTES;
+SELECT * FROM marcas;
+SELECT * FROM paises;
+SELECT * FROM departamentos;
+SELECT * FROM ciudades;
+
 
 
 
