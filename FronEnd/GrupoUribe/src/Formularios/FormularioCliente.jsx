@@ -166,7 +166,7 @@ function FormularioCliente() {
       </div>
 
       <button type="submit" class="btn btn-primary" onClick={createCliente} >
-        Submit
+        Registrar
       </button>
 
     </>
