@@ -4,6 +4,7 @@ import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css"
 import FormularioCliente from './Formularios/FormularioCliente'
 import ListaClientes from './Listas/ListaClientes'
+import Encabezado from './Header/Encabezado'
 
 
 function App() {
@@ -11,17 +12,26 @@ function App() {
 
   return (
 
-    <div id='contenedor'>
-      <aside id="formulario">
-        <FormularioCliente/>
-      </aside>
-      <main>
-        <ListaClientes/>
+    <>
+    <header>
+      <Encabezado />
+    </header>
+    <main>
+      <div id='contenedor'>
+      
+      
+     
+      <FormularioCliente/>
+    
+  
+      <ListaClientes/>
+      
+    
+  </div>
+    </main>
+    </>
 
-      </main>
     
-    
-    </div>
 
     
    

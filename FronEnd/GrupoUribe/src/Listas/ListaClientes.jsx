@@ -21,7 +21,7 @@ function ListaClientes() {
     
     
   return (
-    <div>
+    
       <table className="table">
         <thead>
           <tr>
@@ -58,7 +58,7 @@ function ListaClientes() {
           
         </tbody>
       </table>
-    </div>
+    
   );
 }
 

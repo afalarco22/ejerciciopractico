@@ -124,7 +124,7 @@ function FormularioCliente() {
   };
 
   return (
-    <>
+    <div className = "contenedor_form">
       <div className="form-group">
         <label>Nombres del cliente</label>
         <input
@@ -171,13 +171,13 @@ function FormularioCliente() {
       </div>
 
       <div className="form-group">
-        <label>Número documento</label>
+        <label> Número documento</label>
         <input
           type="text"
           className="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
-          placeholder=">Número documento"
+          placeholder="Número documento"
           name="documento"
           onChange={(e) => setDocumento(e.target.value)}
         />
@@ -280,10 +280,10 @@ function FormularioCliente() {
 
       </div>
 
-      <button type="submit" className="btn btn-primary" onClick={createCliente}>
+      <button type="submit" className="btn btn-light boton" onClick={createCliente}>
         Registrar
       </button>
-    </>
+    </div>
   );
 }
 
