@@ -110,38 +110,10 @@ VALUES("Xioamara", "Guzman","Calle falsa 123", "369852741","C.C.","2002-02-01", 
 
 -- consultas
 
-SELECT * FROM CLIENTES;
+SELECT * FROM cientes;
 SELECT * FROM marcas;
 SELECT * FROM paises;
 SELECT * FROM departamentos;
 SELECT * FROM ciudades;
-
-select * from clientes;
-
-Select * from clientes
-inner join paises
-on clientes.id_pais = paises
-where paises.id = 1;
-
-SELECT 
-    clientes.nombre, 
-    clientes.apellido, 
-    clientes.direccion, 
-    clientes.documento, 
-    clientes.tipo_documento, 
-    clientes.fecha_nacimiento,
-    paises.pais, 
-    departamentos.departamento, 
-    ciudades.ciudad 
-FROM clientes
-JOIN paises ON clientes.id_pais = paises.id
-JOIN departamentos ON clientes.id_departamento = departamentos.id
-JOIN ciudades ON clientes.id_ciudad = ciudades.id;
-
-
-
-
---
-
 
 
