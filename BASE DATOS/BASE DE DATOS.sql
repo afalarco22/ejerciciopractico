@@ -91,6 +91,23 @@ INSERT INTO ciudades(ciudad, id_departamento) VALUES("Santiago de Chile", 7);
 INSERT INTO ciudades(ciudad, id_departamento) VALUES("Rio de Janeiro", 8);
 INSERT INTO ciudades(ciudad, id_departamento) VALUES("Motevideo", 9);
 
+-- clientes
+INSERT INTO clientes(nombre, apellido, direccion, documento, tipo_documento, 
+fecha_nacimiento, id_pais, id_departamento, id_ciudad, id_marca) 
+VALUES("María Alejandra", "Aristizabal","Calle falsa 123", "1234567","C.C.","2000-02-01", 2, 3,2,5);
+
+INSERT INTO clientes(nombre, apellido, direccion, documento, tipo_documento, 
+fecha_nacimiento, id_pais, id_departamento, id_ciudad, id_marca) 
+VALUES("José Armando", "Sosa Cardona","Calle falsa 123", "9874563221","C.C.","1998-02-01", 2, 3,2,3);
+
+INSERT INTO clientes(nombre, apellido, direccion, documento, tipo_documento, 
+fecha_nacimiento, id_pais, id_departamento, id_ciudad, id_marca) 
+VALUES("Suzana", "Carmona","Calle falsa 123", "147852369","C.C.","1992-02-01", 2, 3,2,4);
+
+INSERT INTO clientes(nombre, apellido, direccion, documento, tipo_documento, 
+fecha_nacimiento, id_pais, id_departamento, id_ciudad, id_marca) 
+VALUES("Xioamara", "Guzman","Calle falsa 123", "369852741","C.C.","2002-02-01", 2, 3,2,6);
+
 -- consultas
 
 SELECT * FROM CLIENTES;
