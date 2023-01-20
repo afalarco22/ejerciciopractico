@@ -32,7 +32,14 @@ body{
 .americanino{
   height: 99%;
   width: 25%;
+}
 
+#footer{
+
+  width: 98vw;
+  height: 15vh;
+  background-color: white;
+  margin-top: 100px;
 
 
 }
@@ -41,7 +48,7 @@ body{
       text-align: center;
       width: 250px !important; 
       background-color: #3c4043;
-      margin-left: 30px;
+      margin-left: 15px;
       border-radius: 15px;
       
     }
@@ -96,9 +103,9 @@ label{
 }
 
 input, select {
-  background: none !important;
+  background: white !important;
   border: 1 solid white !important;
-  color: white;
+  
 }
 
 

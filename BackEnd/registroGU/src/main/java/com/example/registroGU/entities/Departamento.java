@@ -14,8 +14,20 @@ public class Departamento {
     @Column(name="departamento")
     private String departamento;
 
+    @Column(name = "id_pais", nullable = false)
+    private Integer id_pais;
+
+
     public Integer getId() {
         return id;
+    }
+
+    public Integer getId_pais() {
+        return id_pais;
+    }
+
+    public void setId_pais(Integer id_pais) {
+        this.id_pais = id_pais;
     }
 
     public void setId(Integer id) {

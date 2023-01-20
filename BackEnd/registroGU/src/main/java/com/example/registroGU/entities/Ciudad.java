@@ -13,6 +13,18 @@ public class Ciudad {
     @Column(name="ciudad")
     private String ciudad;
 
+    @Column(name = "id_departamento", nullable = false)
+    private Integer id_departamento;
+
+        // métodos
+    public Integer getId_departamento() {
+        return id_departamento;
+    }
+
+    public void setId_departamento(Integer id_departamento) {
+        this.id_departamento = id_departamento;
+    }
+
     public Integer getId() {
         return id;
     }

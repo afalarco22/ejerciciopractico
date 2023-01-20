@@ -1,5 +1,57 @@
-CREATE DATABASE registrouribe;
-use registrouribe;
+CREATE DATABASE registrouribe2;
+use registrouribe2;
+
+CREATE TABLE marcas(
+id INT PRIMARY KEY auto_increment,
+marca varchar(50)
+);
+
+CREATE TABLE paises(
+id  INT PRIMARY KEY auto_increment,
+pais varchar(50)
+);
+
+CREATE TABLE departamentos(
+id INT PRIMARY KEY auto_increment,
+id_pais int not null,
+departamento varchar(50),
+CONSTRAINT FK_ID_PAIS2 FOREIGN KEY
+(id_pais) REFERENCES paises(id)
+);
+
+CREATE TABLE ciudades(
+id INT PRIMARY KEY auto_increment,
+id_departamento int not null,
+ciudad varchar(50),
+CONSTRAINT FK_ID_CIUDAD2 FOREIGN KEY
+(id_departamento) REFERENCES departamentos(id)
+);
+
+CREATE TABLE clientes(
+id INT PRIMARY KEY auto_increment,
+nombre varchar(50),
+apellido varchar(50),
+direccion varchar(50),
+documento varchar(50),
+tipo_documento varchar(50),
+fecha_nacimiento varchar(50),
+id_pais int not null,
+id_departamento int not null,
+id_ciudad int not null,
+id_marca int not null,
+CONSTRAINT FK_ID_PAIS FOREIGN KEY
+(id_pais) REFERENCES paises(id),
+
+CONSTRAINT FK_ID_DEP FOREIGN KEY
+(id_departamento) REFERENCES departamentos(id),
+
+CONSTRAINT FK_ID_CIUDAD	 FOREIGN KEY
+(id_ciudad) REFERENCES ciudades(id),
+
+CONSTRAINT FK_ID_MARCA	 FOREIGN KEY
+(id_marca) REFERENCES marcas(id)
+
+);
 
 /*La creación de las tablas y las relaciones se hicieron con el modelo de java */
 /*marcas*/
@@ -19,29 +71,25 @@ INSERT INTO paises(pais) VALUES("Chile");
 INSERT INTO paises(pais) VALUES("Brasil");
 INSERT INTO paises(pais) VALUES("Uruguay");
 -- departamentos
-INSERT INTO departamentos(departamento) VALUES("La plata");
-INSERT INTO departamentos(departamento) VALUES("Antioquia");
-INSERT INTO departamentos(departamento) VALUES("Cundinamarca");
-INSERT INTO departamentos(departamento) VALUES("Provincia de lima");
-INSERT INTO departamentos(departamento) VALUES("Pichincha");
-INSERT INTO departamentos(departamento) VALUES("Distrito de Panamá");
-INSERT INTO departamentos(departamento) VALUES("Región Metropolitana de Santiago");
-INSERT INTO departamentos(departamento) VALUES("Estado de Rio de Janeiro");
-INSERT INTO departamentos(departamento) VALUES("Departamento de Motevideo");
+INSERT INTO departamentos(departamento, id_pais) VALUES("La Plata", 1);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Antioquia", 2);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Cundinamarca", 2);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Provincia de lima", 3);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Pichincha", 4);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Distrito de Panamá", 5);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Región Metropolitana de Santiago", 6);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Estado de Rio de Janeiro", 7);
+INSERT INTO departamentos(departamento, id_pais) VALUES("Departamento de Motevideo", 8);
 -- ciudades
-INSERT INTO ciudades(ciudad) VALUES("Buenos Aires");
-INSERT INTO ciudades(ciudad) VALUES("Medellín");
-INSERT INTO ciudades(ciudad) VALUES("Bogotá");
-INSERT INTO ciudades(ciudad) VALUES("Lima");
-INSERT INTO ciudades(ciudad) VALUES("Quito");
-INSERT INTO ciudades(ciudad) VALUES("Ciudad de Panamá");
-INSERT INTO ciudades(ciudad) VALUES("Santiago de Chile");
-INSERT INTO ciudades(ciudad) VALUES("Rio de Janeiro");
-INSERT INTO ciudades(ciudad) VALUES("Motevideo");
-
-
-
-
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Buenos Aires", 1);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Medellín", 2);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Bogotá", 3);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Lima", 4);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Quito", 5);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Ciudad de Panamá", 6);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Santiago de Chile", 7);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Rio de Janeiro", 8);
+INSERT INTO ciudades(ciudad, id_departamento) VALUES("Motevideo", 9);
 
 -- consultas
 
@@ -51,6 +99,27 @@ SELECT * FROM paises;
 SELECT * FROM departamentos;
 SELECT * FROM ciudades;
 
+select * from clientes;
+
+Select * from clientes
+inner join paises
+on clientes.id_pais = paises
+where paises.id = 1;
+
+SELECT 
+    clientes.nombre, 
+    clientes.apellido, 
+    clientes.direccion, 
+    clientes.documento, 
+    clientes.tipo_documento, 
+    clientes.fecha_nacimiento,
+    paises.pais, 
+    departamentos.departamento, 
+    ciudades.ciudad 
+FROM clientes
+JOIN paises ON clientes.id_pais = paises.id
+JOIN departamentos ON clientes.id_departamento = departamentos.id
+JOIN ciudades ON clientes.id_ciudad = ciudades.id;
 
 
 

@@ -15,8 +15,6 @@ public class ServicioCliente implements ServicioBase<Cliente> {
     @Autowired
     RepositorioCliente repositorioCliente;
 
-
-
     @Override
     public List<Cliente> buscarTodos() throws Exception {
         try {

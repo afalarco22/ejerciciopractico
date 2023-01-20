@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import FormularioCliente from './Formularios/FormularioCliente'
 import ListaClientes from './Listas/ListaClientes'
 import Encabezado from './Header/Encabezado'
+import Footer from './Footer/Footer'
 
 
 function App() {
@@ -19,16 +20,17 @@ function App() {
     <main>
       <div id='contenedor'>
       
-      
-     
       <FormularioCliente/>
-    
-  
       <ListaClientes/>
       
-    
-  </div>
+      </div>
     </main>
+
+    <footer>
+      <Footer/>
+    </footer>
+
+    
     </>
 
     

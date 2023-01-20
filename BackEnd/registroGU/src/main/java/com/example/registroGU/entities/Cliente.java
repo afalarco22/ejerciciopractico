@@ -35,17 +35,53 @@ public class Cliente {
     @Column(name = "fecha_nacimiento")
     private String fecha_nacimiento;
 
-    @Column(name = "ciudad")
-    private String ciudad;
+    @Column(name = "id_ciudad", nullable = false)
+    private Integer id_ciudad;
 
-    @Column(name = "departamento")
-    private String departamento;
+    @Column(name = "id_departamento", nullable = false)
+    private Integer id_departamento;
 
-    @Column(name = "pais")
-    private String pais;
+    @Column(name = "id_pais", nullable = false)
+    private Integer id_pais;
 
-    @Column(name = "marca")
-    private String marca;
+    @Column(name = "id_marca", nullable = false)
+    private Integer id_marca;
+
+
+    // métodos
+
+
+    public Integer getId_ciudad() {
+        return id_ciudad;
+    }
+
+    public void setId_ciudad(Integer id_ciudad) {
+        this.id_ciudad = id_ciudad;
+    }
+
+    public Integer getId_departamento() {
+        return id_departamento;
+    }
+
+    public void setId_departamento(Integer id_departamento) {
+        this.id_departamento = id_departamento;
+    }
+
+    public Integer getId_pais() {
+        return id_pais;
+    }
+
+    public void setId_pais(Integer id_pais) {
+        this.id_pais = id_pais;
+    }
+
+    public Integer getId_marca() {
+        return id_marca;
+    }
+
+    public void setId_marca(Integer id_marca) {
+        this.id_marca = id_marca;
+    }
 
     public Integer getId() {
         return id;
@@ -103,35 +139,5 @@ public class Cliente {
         this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getCiudad() {
-        return ciudad;
-    }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public String getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(String departamento) {
-        this.departamento = departamento;
-    }
-
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
 }

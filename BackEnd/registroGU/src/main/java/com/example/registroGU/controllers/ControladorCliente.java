@@ -48,6 +48,17 @@ public class ControladorCliente {
 
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> buscarPorId(@PathVariable Integer id) {
+        try {
+            Cliente cliente = servicioCliente.buscarPorId(id);
+            return ResponseEntity.status(HttpStatus.OK).body(cliente);
+        } catch (Exception error) {
+            return ResponseEntity
+                    .status(HttpStatus.BAD_REQUEST)
+                    .body("{mensaje: Revisa la peticion} " + error);
+        }
+    }
 
 
 
@@ -55,7 +66,4 @@ public class ControladorCliente {
 
 
 
-
-
-
-}
+}// fin clase

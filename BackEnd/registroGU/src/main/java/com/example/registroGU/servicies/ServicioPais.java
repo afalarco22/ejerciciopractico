@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ServicioPais implements ServicioBase <Pais> {
@@ -27,7 +28,16 @@ public class ServicioPais implements ServicioBase <Pais> {
 
     @Override
     public Pais buscarPorId(Integer id) throws Exception {
-        return null;
+        try {
+            Optional<Pais> paisBuscado = respositorioPais.findById(id);
+            if (paisBuscado.isPresent()) {
+                return paisBuscado.get();
+            } else {
+                throw new Exception("No se encontró el pais con id: " + id);
+            }
+        } catch (Exception error) {
+            throw new Exception(error.getMessage());
+        }
     }
 
     @Override

@@ -103,10 +103,10 @@ function FormularioCliente() {
         documento: documento,
         direccion: direccion,
         fecha_nacimiento: fecha_nacimiento,
-        pais: pais,
-        departamento: departamento,
-        ciudad: ciudad,
-        marca: marca,
+        id_pais: pais,
+        id_departamento: departamento,
+        id_ciudad: ciudad,
+        id_marca: marca,
       })
       .then(function () {
         alert("Se ha creado correctamente el registro");
@@ -222,7 +222,7 @@ function FormularioCliente() {
         >
           <option value="">-----</option>
           {datosPais.map((e) => (
-            <option key={e.id} value={e.pais}>
+            <option key={e.id} value={e.id}>
               {e.pais}
             </option>
           ))}
@@ -238,7 +238,7 @@ function FormularioCliente() {
         >
           <option value="">-----</option>
           {datosDepartamento.map((e) => (
-            <option key={e.id} value={e.departamento}>
+            <option key={e.id} value={e.id}>
               {e.departamento}
             </option>
           ))}
@@ -254,7 +254,7 @@ function FormularioCliente() {
         >
           <option value="">-----</option>
           {datosCiudad.map((e) => (
-            <option key={e.id} value={e.ciudad}>
+            <option key={e.id} value={e.id}>
               {e.ciudad}
             </option>
           ))}
@@ -271,7 +271,7 @@ function FormularioCliente() {
         >
           <option value="">-----</option>
           {datosMarca.map((e) => (
-            <option key={e.id} value={e.marca}>
+            <option key={e.id} value={e.id}>
               {e.marca}
             </option>
           ))}
